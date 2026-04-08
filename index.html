@@ -212,13 +212,7 @@ function showProg(p){
 }
 
 async function getFolder(){
-  try{
-    const r = await fetch(PROXY + '/files/v3/folders/search?query=' + encodeURIComponent(FOLDER));
-    if(r.ok){ const d=await r.json(); if(d.results&&d.results.length) return d.results[0].id; }
-    const c = await fetch(PROXY + '/files/v3/folders', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({name:FOLDER})});
-    if(c.ok){ const d=await c.json(); return d.id; }
-  }catch(e){}
-  return null;
+  return '210671463784'; // pacific-discovery-slider folder ID
 }
 
 async function hsUpload(blob, name, folderId){
